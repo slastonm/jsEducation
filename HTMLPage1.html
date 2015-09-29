@@ -8,8 +8,38 @@
 <body>
 <script type="text/javascript">
     var x = 6;
-    var y = 15;
+    var y = 16;
     var z = 4;
+
+    calcValue = (x + y + z) / 3;
+    document.write(calcValue + "<br/>");
+
+    res = x += y - x++ * z;
+    document.write(res + "<br/>");
+
+    res2 = z = --x - y * 5;
+    document.write(res2 + "<br/>");
+
+    res3 = y /= x + 5 % z;
+    document.write(res3 + "<br/>");
+
+    res4 = z = x++ + y * 5;
+    document.write(res4 + "<br/>");
+
+    res5 = x = y - x++ * z;
+    document.write(res5 + "<br/>");
+
+
+    var r = 4;
+    var h = 100;
+    var pi = 3.14;
+
+    var volume = pi * (r * r) * h;
+    document.write("cylinder volume V = " + volume + "<br/>");
+
+    var area = 2 * pi * r * h;
+    document.write("area of the cylinder surface S = " + volume + "<br/>");
+
 </script>
 </body>
 </html>

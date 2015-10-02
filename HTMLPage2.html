@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Second task</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var a = +prompt('a?', '');
+
+        //Convert to switch 
+            
+        //if (a == 0) {
+        //alert(0);
+        //}
+        //if (a == 1) {
+        //    alert(1);
+        //}
+
+        //if (a == 2 || a == 3) {
+        //    alert('2,3');
+        //}
+
+        switch(a){
+            case 0:
+                alert('0');
+                break;
+            case 1:
+                alert('1');
+                break;
+            case 2:
+            case 3:
+                alert('2 or 3');
+                break;
+            default:
+                alert('new number')
+        }
+
+
+        var c = 3;
+        var d = 2;
+
+        //if (c + d < 4) {
+        //    document.write('Few');
+
+        //} else {
+        //    document.write('A lot');
+        //}
+
+            var message =( c + d < 4) ? document.write('Few') : document.write('A lot');
+
+
+            for (i = 1; i <= 10; i++){
+                if (i % 2 ==0) {
+                    alert(i);
+                }
+            }
+
+            var question = +prompt('put a number', '');
+
+            if (question == 0) {
+                alert('you put 0')
+            }
+            else if(question <0){
+                alert('you put -1')
+            }
+            else {
+                alert('you put 1')
+            }
+
+            var f = 3;
+            var q = 6;
+            
+            for (i = f; i < q; i++) {
+                if (i % 2) {
+                    document.write(i+ "<br>");
+                }
+            }
+            document.write("<hr/>");
+
+
+            var shop = 10;
+            var shoptmp = shop;
+
+            var res = 1;
+
+            do {
+                res *= shop--;
+
+            } while (shop > 1)
+
+            document.write("The number of deliveries" + shoptmp + " shops = " + res);
+
+    </script>
+</body>
+</html>

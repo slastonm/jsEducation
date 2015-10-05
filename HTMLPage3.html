@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Third task</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var arrayTest = [1, 2, 3, 4, 5, 6, 7, 90];
+        var maxArray = arrayTest[0];
+        for (i = 0; i < arrayTest.length; i++) {
+            if(arrayTest[i]>maxArray){
+                maxArray = arrayTest[i];
+            }   
+        }
+        document.write("max value = " + maxArray);
+        document.write("<hr\>");
+        var minArray =arrayTest[0];
+        for (i = 0; i < arrayTest.lenght; i++) {
+            if (arrayTest[i] < minArray) {
+                minArray = arrayTest[i];
+            }
+        }
+        document.write("min value =" + minArray);
+        document.write("<hr\>");
+
+        var summ = 0;
+        for (i = 0; i < arrayTest.length; i++) {
+            summ += arrayTest[i];
+        }
+        document.write("summ all value = " + summ);
+        document.write("<hr\>");
+        //alert(summ);
+        newSumm = summ / arrayTest.length;
+
+        document.write("new summ value = " + newSumm);
+        document.write("<hr\>");
+
+        for (i = 0; i < arrayTest.length; i++) {
+            if (arrayTest[i] % 2 != 0) {
+                //alert(arrayTest[i]);
+                document.write("value = " + arrayTest[i]+"<br/>");
+            }
+        }
+        document.write("<hr\>");
+        var good = [1, 2, 3, 4];
+        document.write(good.length);
+        document.write("<hr\>");
+
+        good.push("computer");
+        document.write(good);
+        document.write("<hr\>");
+
+
+        var music = ["джаз", "Блюз"]
+        document.write(music + "<br/>");
+        music.push("Рок-н-Ролл");
+        document.write(music + "<br/>");
+        music[1] = "Классика";
+        document.write(music + "<br/>");
+        music.shift();
+        document.write(music + "<br/>");
+        music.unshift('Рэп', 'Регги');
+        document.write(music + "<br/>");
+    </script>
+    <!--Джаз, Блюз
+    Джаз, Блюз, Рок-н-Ролл
+    Джаз, Классика, Рок-н-Ролл
+    Классика, Рок-н-Ролл
+    Рэп, Регги, Классика, Рок-н-Ролл-->
+</body>
+</html>

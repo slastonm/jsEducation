@@ -1,2 +1,3 @@
-# jsEducation
-Education task
+## jsEducation
+#Educational tasks for learning javascript
+

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Five task</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var person = {
+            name: "Vasja",
+            surname: "Petrov",
+            age:25
+        };
+
+        person.name = "Srgej";
+        document.write(person.name + "<br/>");
+        document.write("<hr/>");
+        document.write(person.toSource() + "<br/>");
+        delete person.name;
+        document.write("<hr/>");
+        document.write(JSON.stringify(person) + "<br/>");
+
+
+
+    </script>
+
+</body>
+</html>
+
+ 

@@ -51,15 +51,34 @@
     }
     
 
-
+    document.write("<hr>");
     var a1 = document.getElementById('link1');
     var a2 = document.getElementById('link2');
     var a3 = document.getElementById('link3');
 
 
     a3.removeAttribute("href");
-    alert(a3.getAttribute("href"));
+    document.write(a3.getAttribute("href")+"</br>");
 
     a2.setAttribute("href", "vk.com");
-    alert(a2.getAttribute("href"));
+    document.write(a2.getAttribute("href"));
+
+    document.write("<hr>");
+
+
+    var cont = document.getElementById('container');
+    document.getElementById('add').onclick = function () {
+        var p1 = document.createElement('p');
+        p1.innerHTML = "CreatElement";
+        container.appendChild(p1);
+        if (cont.children.length > 3) {
+            cont.parentNode.removeChild(cont);
+        } alert('not 3 ');
+    }
+    document.getElementById('remove').onclick = function () {
+        if (cont.parentNode > 10) {
+            cont.parentNode.removeChild(cont);
+        }
+        //cont.parentNode.removeChild(cont);
+    }
 })();

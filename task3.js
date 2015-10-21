@@ -2,34 +2,34 @@
 
 
 (function () {
-    //var count = 0;
-    //var interval = 0;
-    //function Count(){
-    //    count++;
-    //    document.getElementById("out").innerHTML = count;
-    //}
+    var count = 0;
+    var interval = 0;
+    function Count(){
+        count++;
+        document.getElementById("out").innerHTML = count;
+    }
     
-    //document.getElementById('start').onclick = function () {
-    //   interval = setInterval(Count, 1000);
-    //}
-    //document.getElementById('stop').onclick = function () {
-    //    clearInterval(interval);
-    //}
-    //document.getElementById('clear').onclick = function () {
-    //    document.getElementById('out').innerHTML = 0;   
-    //}
+    document.getElementById('start').onclick = function () {
+       interval = setInterval(Count, 1000);
+    }
+    document.getElementById('stop').onclick = function () {
+        clearInterval(interval);
+    }
+    document.getElementById('clear').onclick = function () {
+        document.getElementById('out').innerHTML = 0;   
+    }
 
-    //var sum = 0;
-    //var text = document.getElementById('put1');
-    //var text2 = document.getElementById('put2');
-    //var val = text.value;
-    //var val2 = text2.value;
+    var sum = 0;
+    var text = document.getElementById('put1');
+    var text2 = document.getElementById('put2');
+    var val = text.value;
+    var val2 = text2.value;
 
    
-    //document.getElementById('getput').onclick = function () {
-    //    sum = Number(val) + Number(val2);
-    //    alert(sum);
-    //}
+    document.getElementById('getput').onclick = function () {
+        sum = Number(val) + Number(val2);
+        alert(sum);
+    }
 
 
     var runText = "Run run run tet run";
@@ -46,19 +46,6 @@
     }
     myLoop();
 
-
-        
-     
-
-
-
-    //function write() {
-        
-
-    //    document.getElementById('run').innerHTML(runText[i]);
-
-    //}
-    //setTimeout('write()', speed);
 
 })();
 

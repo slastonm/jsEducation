@@ -1,0 +1,52 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.wrapper{
+	position: relative;
+	width: 160px;
+	margin: 0 auto;
+	height: 160px;
+	border:1px solid red;
+}
+#mov{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: #333;
+}
+#test,
+#test2,
+#test3{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: #333;
+}
+.wrapper-answer,
+.validation-wrapper{
+	margin: 15px auto;
+	width: 400px;
+}
+.wrapper-answer input,
+.validation-wrapper input{
+	text-align: center;
+	width: 100%;
+}
+.wrapper-answer button,
+.validation-wrapper button{
+	width: 100%;
+	display: block;
+	margin: 15px 0 0 0;
+}
+.error{
+	border:3px solid red;
+}
+#remember{
+	display: inline-block;
+	width: 10px;
+	text-align: left;
+}
+.succses{
+	border:3px solid green;
+}

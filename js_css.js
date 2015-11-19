@@ -59,10 +59,12 @@ var styles;
         var wordValue =/\w\w\w\w\w/;
 
 
-    var passwordValue=document.getElementById('name').value;
-    var passwords=document.getElementById('password').value;
+
     var remembers=document.getElementById('remember');
     document.getElementById('enter').onclick=function(){
+
+    var passwordValue=document.getElementById('name').value;
+    var passwords=document.getElementById('password').value;
 
         if(wordValue.test(passwordValue) == true && passwordValue==text){
             var nameArea = document.getElementById("name");

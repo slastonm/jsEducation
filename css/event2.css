@@ -1,0 +1,40 @@
+body{
+	margin: 0;
+	padding: 0;
+	color:#333;
+	text-align: center;
+}
+.wrapper{
+	width: 960px;
+	margin: 0 auto;
+}
+.red{
+	color:red;
+}
+.blue{
+	color: lightblue;
+}
+.green{
+	color:green;
+}
+#gameBlock{
+	width: 560px;
+	margin: 35px auto;
+	background-color: #4BBD4B;
+	height: 200px;
+	position: relative;
+}
+#hero{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	background-color: yellow;
+}
+
+button{
+	border:none;
+	color:#fff;
+	background: yellow;
+	position: absolute; 
+}
+

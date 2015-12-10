@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Form</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <form name="formName">
+            <p>
+                Name
+            </p>
+            <input name="namef" type="text">
+            <p>
+                Email
+            </p>
+            <input name="email" type="text">
+            <p>
+                Test
+            </p>
+            <input type="text" name="test">
+            <button>
+                Enter
+            </button>
+        </form>
+    </div>
+    <div class="wrapper">
+<!--     <form name="pizza">
+        <h1>
+            Pizza order
+        </h1>
+        <p>
+            Name
+        </p>
+        <input type="text" name="pizzaName">
+        <p>
+            phone
+        </p>
+        <input type="text" name="pizzaPhone">
+        <p>
+            Size
+        </p>
+        <select>
+            <option value="1">lite</option>
+            <option value="2">middle</option>
+            <option value="3">big</option>
+        </select>
+        <p>
+            Bonus
+        </p> 
+        <p>
+            Price
+        </p>
+        <input type="text" name="howMuch">
+        <button type="submit">
+            Order
+        </button>       
+    </form> -->
+
+    <form name="pizzaForm">
+        <h1>
+            Pizza order
+        </h1>
+        <p>
+        Name:            
+        </p>    
+
+        <input type="text" name="userName" />
+        <p>
+            email:            
+        </p>
+
+        <input type="text" name="email" />
+        <p>
+            Phone            
+        </p>
+
+        <input type="text" name="phone" /><br />
+        <div id="priceCount">
+            <p>
+                Size
+            </p>
+            <select name="sizes">
+                <option value="0">Select size</option>
+                <option value="5">lite</option>
+                <option value="7">middle</option>
+                <option value="10">big</option>
+            </select>  
+            <p>
+                Bonus 100gr = 2$
+            </p>
+                <label for="meat">
+                    meat
+                </label>   
+                <input  id="meat" type="checkbox">
+                <label for="mushrooms">
+                    mushrooms
+                </label>               
+                <input id="mushrooms" type="checkbox">
+                <label for="cheese">
+                    cheese
+                </label>              
+                <input id="cheese" type="checkbox">
+
+            <p>
+                Price
+            </p> 
+            <input id="price" type="text">             
+        </div>
+
+        <button type="submit">
+            Order
+        </button> 
+    </form>
+    </div>
+    <script type="text/javascript" src="js/pizza.js"></script>
+    <script type="text/javascript" src="js/form.js"></script>
+</body>
+</html>

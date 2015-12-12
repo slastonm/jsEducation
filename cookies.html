@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <button id="set">
+        Set cookie
+    </button>
+    <button id="get">
+        Get cookie
+    </button>
+    <button id="rewrite">
+        Rewrite
+    </button>
+    <button id="remove">
+        Remove
+    </button>
+
+    <div>
+        <h1>
+            Background color select
+        </h1>
+        <span>
+            Coral
+        </span>
+        <input type="radio" name="color" value="#FF7F50" />
+        <span>
+            Yellow
+        </span>
+        <input type="radio" name="color" value="#F4F748" />
+
+        <button id="save">
+            Save
+        </button>
+    </div>
+    <script>
+        (function () {
+
+            var set = document.getElementById('set');
+            var get = document.getElementById('get');
+            var rewrite = document.getElementById('rewrite');
+            var remove = document.getElementById('remove');
+
+            set.onclick = function () {
+                document.cookie = 'info=test';
+                document.cookie = 'my=age; max-age=604800';
+                document.cookie = 'removeMe = remove;';
+                document.cookie = 'change = test';
+            }
+            rewrite.onclick = function () {
+                document.cookie = 'change = test2';
+            }
+            get.onclick = function () {
+                alert(document.cookie);
+            }
+            remove.onclick = function () {
+                document.cookie = 'removeMe = remove; max-age=0';
+            }
+
+            //work with cookie
+
+            window.addEventListener("load", function () {
+                var savedColors = findCookieValue("page-color");
+                if (savedColors) {
+                    document.body.style.backgroundColor = savedColors;
+                }
+                document.getElementById('save').addEventListener("click", function () {
+                    var selectedColor = getCheckedRadioId("color");
+                    document.cookie = "page-color=" + encodeURIComponent(selectedColor) + ";max-age=" + (60 * 60);
+                    document.body.style.backgroundColor = selectedColor;
+                })
+
+                function getCheckedRadioId(name) {
+                    var elements = document.getElementsByName(name);
+
+                    for (var i = 0, len = elements.length; i < len; ++i)
+                        if (elements[i].checked) return elements[i].value;
+                }
+
+                function findCookieValue(cookieName) {
+                    var allcookies = document.cookie;
+                    var pos = allcookies.indexOf(cookieName + "=");
+
+                    if (pos != -1) {
+                        var start = pos + cookieName.length + 1;
+                        var end = allcookies.indexOf(";", start);
+
+                        if (end == -1) end = allcookies.length;
+
+                        var value = allcookies.substring(start, end);
+                        value = decodeURIComponent(value);
+                        return value;
+                    }
+                }
+
+
+
+            })
+
+        })();
+
+
+
+    </script>
+</body>
+</html>

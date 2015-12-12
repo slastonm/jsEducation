@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage</title>
+    <meta charset="utf-8" />
+    <script>
+        window.addEventListener("load", function (){
+            if (window.localStorage.pageColor) {
+                document.body.style.backgroundColor = window.localStorage.pageColor;
+            }
+            document.getElementById("saves").addEventListener("click", function () {
+                var selectedColor = getCheckedRadioId("color")
+                window.localStorage.pageColor = selectedColor;
+                document.body.style.backgroundColor = selectedColor;
+            });
+
+            function getCheckedRadioId(name) {
+                var elements = document.getElementsByName(name);
+
+                for (var i = 0, len = elements.length; i < len; ++i)
+                    if (elements[i].checked) return elements[i].value;
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>
+        Background color select
+    </h1>
+    <input type="radio" name="color" value="#FF7F50" /> Coral
+    <input type="radio" name="color" value="#F4F748" /> Yellow
+    <input id="saves" type="button" value="Сохранить" />
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Storage</title>
+    <meta charset="utf-8" />
+    <script>
+        window.addEventListener("load", function (){
+            if (window.localStorage.pageColor) {
+                document.body.style.backgroundColor = window.localStorage.pageColor;
+            }
+            document.getElementById("saves").addEventListener("click", function () {
+                var selectedColor = getCheckedRadioId("color")
+                window.localStorage.pageColor = selectedColor;
+                document.body.style.backgroundColor = selectedColor;
+            });
+
+            function getCheckedRadioId(name) {
+                var elements = document.getElementsByName(name);
+
+                for (var i = 0, len = elements.length; i < len; ++i)
+                    if (elements[i].checked) return elements[i].value;
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>
+        Background color select
+    </h1>
+    <input type="radio" name="color" value="#FF7F50" /> Coral
+    <input type="radio" name="color" value="#F4F748" /> Yellow
+    <input id="saves" type="button" value="Сохранить" />
+</body>
+</html>

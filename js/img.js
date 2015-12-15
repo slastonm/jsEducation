@@ -42,20 +42,19 @@
     var big = document.getElementById('big'),
         one = document.getElementById('one'),
         two = document.getElementById('two'),
+        tester = document.getElementsByClassName('smallImg'),
         three =document.getElementById('three');
 
+        var big;
+
         one.onclick = function(){
-            var small = one.src;
-            alert('small');
-            big.src=small;
+            big.src=this.src;
         }
         two.onclick = function(){
-            small = this.src;
-            big.src=small;
+            big.src=this.src;
         }
         three.onclick = function(){
-            small = this.src;
-            big.src=small;
+            big.src=this.src;
         }
 
 

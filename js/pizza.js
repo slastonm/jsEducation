@@ -101,3 +101,19 @@
     }  
 
 })();
+
+
+    var checkboxes = [meat, mushrooms, cheese];
+    var totalPrice;
+    function counter(){
+
+        var counter = 0,
+            sizePizza =pizzaForm.sizes.value;
+
+        checkboxes.forEach(function(el){
+            el.checked ? counter++ : null;
+        });
+
+        totalPrice=Number(sizePizza) + counter*2 ;
+        return priceBlock.value = totalPrice;
+    }

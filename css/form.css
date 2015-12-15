@@ -50,3 +50,20 @@ h1, h3{
 	background-color: green;
 	border-color:darkgreen;
 }
+
+/* === img ==*/
+.big-img img{
+	width: 70%;
+}
+.small{
+	display: inline-block;
+	width: 33%;
+}
+.small img{
+	cursor: pointer;
+	width: 50%;
+}
+.center{
+	text-align: center;
+}
+

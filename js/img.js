@@ -36,9 +36,27 @@
             image.src = thirdImg;
         }
 
-
+        
     });
 
+    var big = document.getElementById('big'),
+        one = document.getElementById('one'),
+        two = document.getElementById('two'),
+        three =document.getElementById('three');
+
+        one.onclick = function(){
+            var small = one.src;
+            alert('small');
+            big.src=small;
+        }
+        two.onclick = function(){
+            small = this.src;
+            big.src=small;
+        }
+        three.onclick = function(){
+            small = this.src;
+            big.src=small;
+        }
 
 
 

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.onload = function () {
+
+            var a = document.getElementById('a');
+            var b = document.getElementById('b');
+
+            document.getElementById('post').onclick = function () {
+                var xhr = new XMLHttpRequest();
+                //xhr.open('GET', "test.html", false);
+                xhr.open("GET", "CalcHandler.ashx?a=1&b=2");
+                //xhr.send();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        document.getElementById("out").innerHTML = xhr.responseText;
+                    }
+                }
+                xhr.send();
+
+                //document.getElementById('out').innerHTML += xhr.responseText;
+            }
+            document.getElementById('get').onclick = function () {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "CalcHandler.ashx");
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        document.getElementById("out").innerHTML = xhr.responseText;
+                    }
+                }
+                xhr.send('a=1&b=3');
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="a" type="number"/>
+    <input id="b" type="number" />
+    <button id="get">
+        Get
+    </button>
+    <button id="post">
+        Post
+    </button>
+    <div id="out">
+
+    </div>
+</body>
+</html>

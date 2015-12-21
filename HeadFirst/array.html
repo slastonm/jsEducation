@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Array</title>
+</head>
+<body>
+<script type="text/javascript">
+var product = [ 'meat', 'pork','milk'];
+
+var hasMilk =[false, false, true];
+
+for(var i = 0; i<hasMilk.length; i++){
+
+    if(hasMilk[i]==true){
+        console.log(product[i] +" "+"has milk");
+    }
+}
+
+var score = [11, 20, 40, 12, 50, 54, 60, 10, 9];
+
+var highArray = 0;
+
+var output;
+
+for(var i = 0; i<score.length; i++){
+    output = "Array number" + i + "score" +score[i];
+    console.log(output);
+    if(score[i]>highArray){
+        highArray = score[i];
+    }
+
+};
+console.log("max-high value"+ highArray);
+
+
+
+</script>
+</body>
+</html>

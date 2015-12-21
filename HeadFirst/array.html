@@ -34,7 +34,13 @@ for(var i = 0; i<score.length; i++){
 };
 console.log("max-high value"+ highArray);
 
-
+var bestSolution = [];
+for (var i = 0; i<score.length; i++){
+    if(score[i] == highArray){
+        bestSolution.push(score[i]);
+    }
+}
+console.log(bestSolution);
 
 </script>
 </body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<style>
+    div{
+        width: 10px;
+        height: 10px;
+    }
+</style>
+<script>
+    $( document ).ready(function() {
+        $('div:not(.green, #blue)').css('border', '1px solid red');
+
+    });
+</script>
+<body>
+
+<!-- Выделите красной рамкой все блочные элементы, кроме тех, которые содержат атрибут "class" со значением "green" и атрибут "id" со значением "blue"  -->
+
+<div></div>
+<div id="blue"></div>
+<div></div>
+<div class="green"></div>
+<div class="green"></div>
+<div class="gray"></div>
+<div></div>
+</body>
+</html>

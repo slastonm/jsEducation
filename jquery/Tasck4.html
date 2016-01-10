@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Классная работа</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+
+                $("button[disabled]").next().text(" this button is disabled");
+            $('.list').html("<ul><li>1</li><li>2</li><li>3</li></ul>");
+
+            var parents = $('p').parent();
+            parents.css('border', '1px solid red');
+        });
+    </script>
+    <style>
+        span {
+            color: blue;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <button disabled="disabled">First</button>
+    - <span></span></div>
+<div>
+    <button>Second</button>
+    - <span></span></div>
+<div>
+    <button disabled="disabled">Third</button>
+    - <span></span></div>
+
+<div class="list"></div>
+
+<div>
+    <p>Paragraph 1</p>
+</div>
+<div>
+    <span>Span 1</span>
+</div>
+
+
+</body>
+</html>

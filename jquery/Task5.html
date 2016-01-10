@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Классная работа</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        var count = 0;
+
+        $( document ).ready(function() {
+            $('button').click(function(){
+                count++;
+                textFunc();
+
+                if(count >= 5){
+
+                $('button').off('click');
+                }
+            });
+            function textFunc (){
+
+                $('p').text(count);
+            }
+
+
+        });
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <p></p>
+    <button>
+        Click me
+    </button>
+
+
+
+</body>
+</html>

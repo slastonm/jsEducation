@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home work</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+
+
+        $( document ).ready(function() {
+            $('.block').click(function(){
+               $(this).next().show(600);
+            });
+
+        });
+    </script>
+    <style>
+        .wrapper{
+            width: 650px;
+            margin: 0 auto;
+        }
+        .colum{
+            width: 200px;
+            display: inline-block;
+        }
+        .block, .hide{
+            width: 200px;
+            height: 200px;
+            background: coral;
+            color:#333;
+            text-align: center;
+            vertical-align: top;
+        }
+        .hide{
+            display: none;
+            margin: 5px 0 0 0;
+
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="colum">
+        <div class="block">
+            Test1
+        </div>
+        <div class="hide">
+            Nice
+        </div>
+    </div>
+    <div class="colum">
+        <div class="block">
+            Test2
+        </div>
+        <div class="hide">
+            nice nice
+        </div>
+    </div>
+    <div class="colum">
+        <div class="block">
+            test3
+        </div>
+        <div class="hide">
+            very nice
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

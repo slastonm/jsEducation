@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home work</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $('p').eq(0).data('name', 'igor');
+            $('p').eq(1).data('name', 'BO');
+            $('p').eq(2).data('name', 'andre');
+            $('p').click(function(){
+                var test = $(this).data("name");
+                var indexInfo = $(this).index();
+                console.log(test, indexInfo);
+            })
+            $('button').click(
+                    function(){
+                        var i;
+                        var x = $('p').toArray()
+                        for (i = 0; i< x.length; i++) {
+                            alert(x[i].innerHTML);
+                        }
+                         console.log(x);
+                    }
+
+            )
+        });
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <p>Test1</p>
+
+    <p>Test2</p>
+
+    <p>Test3</p>
+
+    <button>
+        Make array
+    </button>
+</body>
+</html>

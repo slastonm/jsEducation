@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home work</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $('button').click(function(){
+                    $.ajax({
+                      type:"GET",
+                        url: "Test.html",
+                        success: function (data) {
+                            $("p:first").append(data);
+                        }
+                    })
+            });
+            $("#load").click(function(){
+                $("loading").load("Test.html #lo");
+            });
+        });
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <p></p>
+    <button>
+        AJAx me
+    </button>
+
+    <button id="load">
+        Load me
+    </button>
+    <div id="loading">
+
+    </div>
+</body>
+</html>

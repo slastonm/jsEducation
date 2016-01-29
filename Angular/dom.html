@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="domApp">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <script src="libs/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script>
+
+        var domApp = angular.module("domApp", []);
+        domApp.controller("domAppCtrl", function ($scope) {
+            $scope.hideBlock1 = true;
+            $scope.hideBlock2 = true;
+            $scope.hideBlock3 = true;
+
+            $scope.showOne = function(){
+                return $scope.hideBlock1 = false;
+            }
+            $scope.showTwo = function(){
+                return $scope.hideBlock2 = false;
+            }
+            $scope.showThre = function(){
+                return $scope.hideBlock3 = false;
+            }
+        })
+    </script>
+    <style>
+        .one,
+        .two,
+        .three{
+            height: 100px;
+            width: 100px;
+            float: left;
+        }
+        .one{
+            background: darkblue;
+        }
+        .two{
+            background: green;
+        }
+        .three{
+            background: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" ng-controller="domAppCtrl">
+        <div>
+            <input type="checkbox" ng-model="hideBlock1">
+            <label >Blue</label><br>
+            <input type="checkbox"  ng-model="hideBlock2">
+            <label >Green</label><br>
+            <input type="checkbox"  ng-model="hideBlock3">
+            <label >SkyBlue</label>
+        </div>
+        <button class="btn btn-primary" ng-click="showOne()">Show div1</button>
+        <button class="btn btn-success" ng-click="showTwo()">Show div2</button>
+        <button class="btn btn-info" ng-click="showThre()">Show div3</button>
+        <div class="row">
+            <div class="one" ng-hide="hideBlock1"></div>
+            <div class="two" ng-hide="hideBlock2"></div>
+            <div class="three" ng-hide="hideBlock3"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="libs/angular.js"></script>
+    <script src="js/model.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script>
+        var model = {
+            items: [
+
+            ]
+        };
+        var listApp = angular.module("listApp", []);
+        listApp.controller("listApp", function ($scope) {
+            $scope.list = model;
+//            $scope.url = "table.html";
+            $scope.show = false;
+            $scope.addItem = function (name, duedate, description, completed) {
+                    $scope.list.items.push({ name: name, duedate: duedate, description: description,  completed: completed });
+
+            }
+            $scope.showInfo = function(){
+                $scope.show = true;
+                $scope.url = "table.html";
+            }
+            $scope.hide = function(){
+                $scope.show = false;
+
+            }
+        })
+    </script>
+</head>
+<body ng-controller="listApp">
+<div class="container">
+    <div class="page-header">
+        <h1> Список покупок </h1>
+    </div>
+    <div class="panel">
+        <div class="form-inline">
+            <div class="form-group">
+                <div class="col-md-8">
+                    <input class="form-control" ng-model="name" placeholder = "Название" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <input type="number" class="form-control" ng-model="duedate" placeholder="Цена" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-8">
+                    <input type="text" class="form-control" ng-model="description" placeholder="test" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-3">
+                    <input type="checkbox" class="form-control" ng-model="completed" placeholder="test" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                    <div class="col-md-3">
+                    <button class="btn btn-default" ng-click="addItem(name, duedate, description, completed)">Добавить</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Предмет</th>
+                        <th>Цена</th>
+                        <th>Описание</th>
+                        <th>Куплено</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in list.items">
+                        <td>{{item.name}}</td>
+                        <td>{{item.duedate}}</td>
+                        <td>{{item.description}}</td>
+                        <td><input type="checkbox" ng-model="item.completed" /></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="form-group">
+                    <button  ng-click="showInfo()" >Show info</button>
+                    <!--<button  ng-click="hide()" >hide</button>-->
+                </div>
+            </div>
+            <div class="col-md-6 ng-include: url;" ng-if="show">
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>

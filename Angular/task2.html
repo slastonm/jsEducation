@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listApp">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDoDo</title>
+    <script src="libs/angular.js"></script>
+    <script src="js/toDo.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script>
+        var model ={
+            item : []
+        };
+        var listApp = angular.module("listApp", []);
+        listApp.controller("listApp", function($scope){
+//            $scope.list = model;
+            $scope.model ={};
+
+            $scope.items = [];
+
+            $scope.addItem = function (text){
+                var item = text;
+                $scope.items.push({
+                    text: text.text
+                })
+            }
+        });
+    </script>
+</head>
+<body ng-controller="listApp">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" ng-model ="model.text" >
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-8">
+                    <button class="btn btn-default" ng-click="addItem(model)">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in items">
+                    <td>{{item.text}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

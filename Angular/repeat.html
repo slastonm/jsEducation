@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html ng-app="courseListApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Планировщик курсов</title>
+    <script src="libs/angular.js"></script>
+    <script src="js/model.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <script>
+        // Модель
+
+//        var model = {
+//            user: "User1",
+//            courses: [{ name: "HTML, CSS", passed: "Yes" },
+//                { name: "JavaScript Essential", passed: "Yes" },
+//                { name: "JavaScript Advanced", passed: "Yes" },
+//                { name: "HTML5 &amp; CSS3", passed: "Yes" },
+//                { name: "AngularJS", passed: "No" }]
+//        };
+
+        // Модуль
+
+        var courseListApp = angular.module("courseListApp", []);
+
+        // Контроллер
+
+        courseListApp.controller("CourseListCtrl", function ($scope) {
+            $scope.data = model;
+
+        });
+
+    </script>
+
+</head>
+
+<body ng-controller="CourseListCtrl">
+<div class="container">
+    <div class="page-header">
+        <h1>
+            Планировщик курсов.
+        </h1>
+    </div>
+    <div class="panel">
+        <div  ng-repeat="course in data">
+            <h3>
+                {{course.title}}
+            </h3>
+            <p>{{course.published}}</p>
+            <p>{{course.description}}</p>
+            <button class="btn btn-default">
+                <a href="{{course.link}}">
+                    More info
+                </a>
+
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="formApp">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <script src="libs/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script>
+
+        var formApp = angular.module("formApp", []);
+        formApp.controller("formAppCtrl", function ($scope) {
+            $scope.addNew = function(details){
+                $scope.message = details.name + " "+ details.email + " "+ details.phone + " " + details.password + " "+ details.repeat;
+
+
+            }
+        })
+    </script>
+    <style>
+        input.ng-valid.ng-dirty {
+            border:2px solid lightgreen;
+        }
+        input.ng-invalid{
+            border:2px solid red;
+        }
+        div.error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-controller="formAppCtrl">
+    <div class="row">
+        <form name="myForm" novalidate ng-submit="addNew(details)">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" name="user" class="form-control" required ng-model="details.name" >
+            </div>
+
+            <div class="form-group">
+                <label for="">email</label>
+                <input name="userEmail" type="email" class="form-control" required ng-model="details.email">
+            </div>
+            <div class="error" ng-show="myForm.userEmail.$invalid && myForm.userEmail.$dirty">
+                        <span ng-show="myForm.userEmail.$error.email">
+                            Введите праивльный email
+                        </span>
+                        <span ng-show="myForm.userEmail.$error.required">
+                            Поле не должно быть пустым
+                        </span>
+            </div>
+            <div class="form-group">
+                <label for="">phone</label>
+                <input type="number" name="phone" class="form-control" required  ng-model="details.phone">
+            </div>
+            <div class="form-group">
+                <label for="">password</label>
+                <input type="text" name="password" class="form-control" required ng-model="details.password">
+            </div>
+            <div class="form-group">
+                <label for="">repeat password</label>
+                <input type="text" name="repeatPassword" ng-blur="checkRepeat()" class="form-control" required ng-model="details.repeatPassword">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">
+                    Send
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

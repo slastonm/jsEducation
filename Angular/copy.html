@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="rootApp">
+<head>
+    <meta charset="UTF-8">
+    <title>broadcast</title>
+    <script src="libs/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script>
+
+        var rootApp = angular.module("rootApp", []);
+        rootApp.controller("rootAppCtrl", function ($scope, $rootScope) {
+            $scope.copy = function(){
+                $rootScope.$broadcast("messageEvent", {
+                    message: $scope.messageCopy
+                });
+            };
+        });
+        rootApp.controller("pastAppCtrl", function($scope){
+
+                $scope.$on("messageEvent", function (event, args) {
+                    $scope.pastButton = function (){
+                        return $scope.past = args.message;
+                    }
+                });
+
+        })
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" ng-controller="rootAppCtrl">
+                <p>
+                    Send
+                </p>
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="messageCopy">
+                    <button class="btn" ng-click="copy()">
+                        Copy
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6" ng-controller="pastAppCtrl">
+                <p>
+                    Resive
+                </p>
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="past">
+                    <button class="btn" ng-click="pastButton()">
+                       Past
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

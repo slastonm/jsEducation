@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+    <script src="libs/angular.js"></script>
+    <script src="js/model.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script>
+        var model = {
+            items: [
+
+            ]
+        };
+        var listApp = angular.module("listApp", []);
+        listApp.controller("listApp", function ($scope) {
+            $scope.list = model;
+
+            $scope.addItem = function (name, duedate, description, completed) {
+                $scope.list.items.push({ name: name, duedate: duedate, description: description,  completed: completed });
+
+            }
+            var test = 0;
+            $scope.two = function(){
+                return $scope.test = 2;
+            }
+            $scope.three = function(){
+                return $scope.test = 3;
+            }
+
+        })
+    </script>
+</head>
+<body ng-controller="listApp">
+<div class="container">
+    <div class="page-header">
+        <h1> Notes </h1>
+    </div>
+    <div class="panel">
+        <div class="form-inline">
+            <div class="form-group">
+                <div class="col-md-8">
+                    <input class="form-control" ng-model="name" placeholder = "Название" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <input class="form-control" ng-model="duedate"type="date" name="calendar"/>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-3">
+                    <button class="btn btn-default" ng-click="addItem(name, duedate)">Добавить</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <h3>
+                <button class="btn btn-default" ng-click="two()">2</button>
+                <button class="btn btn-default" ng-click="three()">3</button>
+                <!--Items in cart-->
+                <!--<span class="label label-info">{{items.length}}</span>-->
+                <!--<p>Limit: <select class="text-info" ng-model="limitValue" ng-options="item for items in limitRange"></select></p>-->
+            </h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Note</th>
+                        <th>Day</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in list.items | orderBy : '- duedate'| limitTo: test">
+                        <td>{{item.name}}</td>
+                        <td>{{item.duedate | date:'medium'}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+</html>

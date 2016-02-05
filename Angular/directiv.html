@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="directivApp">
+<head>
+    <meta charset="UTF-8">
+    <title>directiv</title>
+    <script src="libs/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script>
+
+        var directivApp = angular.module("directivApp", []);
+
+        directivApp.directive("list", function () {
+            return {
+                link: function (scope, element, attributes) {
+                    scope.data = scope[attributes["list"]];
+                },
+                restrict: "A",
+                // шаблон для создания разметки
+                templateUrl: "template.html",
+                replace: true
+            }
+        })
+        .controller("directivAppCtrl", function($scope){
+            $scope.items=[
+                {name: "vana", age: 20, skill:"design"},
+                {name: "vana2", age: 22, skill:"design2"},
+                {name: "vana3", age: 23, skill:"design3"}
+            ];
+        });
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body ng-controller="directivAppCtrl">
+    <h3>
+        About
+    </h3>
+
+    <div list="items">
+    </div>
+</body>
+</html>

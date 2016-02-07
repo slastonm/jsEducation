@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>services</title>
+    <script src="libs/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script>
+
+        var app = angular.module('myApp', []);
+
+//        app.factory('testFactory', function(){
+//            return {
+//                sayHello: function(text){
+//                    return "Factory says \"Hello " + text + "\"";
+//                }
+//            }
+//        });
+        app.factory('testFactory', function(){
+
+            return {
+                sayHello: function(a){
+                    document.cookie = a;
+                    return  alert( document.cookie );
+                }
+            }
+        });
+        app.controller("helloCtrl", function($scope, testFactory){
+//                 $scope.inputModel = {
+//
+//                 };
+                $scope.model =[];
+                $scope.fromFactory =function(){
+                    testFactory.sayHello($scope.model.inputModel);
+                }
+        })
+
+
+
+    </script>
+    <style>
+
+    </style>
+</head>
+<body ng-controller="helloCtrl">
+<div ng-controller="helloCtrl" class="container">
+    <div class="row">
+
+        <div class="col-lg-6">
+            <h3>
+               Send cookie
+            </h3>
+            <div class="input-group">
+                <input ng-model="model.inputModel" type="text" class="form-control" placeholder="Your cookie">
+                <span class="input-group-btn">
+                    <button ng-click="fromFactory()" class="btn btn-default" type="button">Write cookie</button>
+                </span>
+          </div>
+            <div class="col-md-6">
+                <div >
+                    <!--<p>{{fromFactory}}</p>-->
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

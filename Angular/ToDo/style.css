@@ -1,0 +1,12 @@
+input.ng-pristine,
+textarea.ng-pristine{
+    border:1px solid #ccc;
+}
+input.ng-valid,
+textarea.ng-valid{
+    border:2px solid lightgreen;
+}
+input.ng-dirty.ng-invalid,
+textarea.ng-dirty.ng-invalid{
+    border:2px solid red;
+}

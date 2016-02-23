@@ -6,7 +6,7 @@ var myApp = angular.module("testApp", ["ngRoute"])
         });
 
         $routeProvider.when("/view1", {
-            templateUrl: "view1.html"
+            templateUrl: "jsEducation/Angular/ToDo/view1.html"
         });
 
         $routeProvider.when("/view2", {

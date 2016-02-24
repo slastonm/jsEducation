@@ -1,0 +1,16 @@
+{
+  "name": "jsEducation",
+  "homepage": "https://github.com/slastonm/jsEducation",
+  "authors": [
+    "slastonm <slastonm@gmail.com>"
+  ],
+  "description": "education git",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "~2.0.0",
+    "normalize-css": "normalize.css#~3.0.3",
+    "bootstrap": "~3.3.6"
+  }
+}
